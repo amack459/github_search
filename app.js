@@ -5,5 +5,8 @@ $scope.username = "amack459";
 $http.get("https://api.github.com/users/"+$scope.username)
         .success(function(data) {
             $scope.userData = data;
+            console.log(userData.name);
         });
+
+
 }]);

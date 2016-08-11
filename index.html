@@ -48,7 +48,7 @@
         <form>
           <div class="col-md-4">
            <div class="input-group">
-             <input type="text" class="form-control" placeholder="Github Username">
+             <input type="text" class="form-control" placeholder="Github Username" ng-model="user.name  ">
              <span class="input-group-btn">
                <button class="btn btn-secondary" type="button" ng-click="search()">Search</button>
              </span>
@@ -58,8 +58,8 @@
       </div>    
   </div>
 
-  
-<!--   <p ng-bind="vm.testing"></p> -->
+
+  <p ng-bind="vm.username"></p>
 <!--   <div>
     <form name="searchForm">
        <input type="text" name="userName" ng-model="user.name" />
