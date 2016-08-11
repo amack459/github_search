@@ -1,0 +1,20 @@
+{
+  "name": "github",
+  "homepage": "https://github.com/amack459/WDI_PROJECT_4",
+  "authors": [
+    "Acacia Mack <acacialmack@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
