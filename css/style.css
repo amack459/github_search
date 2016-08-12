@@ -9,3 +9,7 @@
 .panel-heading{
   text-align: center;
 }
+
+.text-center{
+  margin:0 auto;
+}
