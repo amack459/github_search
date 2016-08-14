@@ -31,9 +31,9 @@
 
   <div class="row"> 
     <form class="col-md-12 col-md-offset-2">
-      <div class="col-md-6">
+      <div class="col-md-8">
        <div class="input-group">
-         <input type="text" class="form-control" placeholder="Github Username" ng-model="userData.login">
+         <input type="text" class="form-control" placeholder="Github Username" ng-model="searchText">
          <span class="input-group-btn">
            <button class="btn btn-secondary" type="button" ng-click="search()">Search</button>
          </span>
@@ -42,18 +42,19 @@
    </form>
  </div>    
 
+
  <div class="row">
- <div class="col-xs-2 col-xs-offset-2">
-   <div class="panel panel-default" class="col-med-6 col-xs-offset-2" ng-repeat="search in searchData | filter:searchText" ng-if="$index % 4 == 0">
-     <div class="panel-heading">
-       <h3 class="panel-title">{{userData.login}}</h3>
-     </div>
-     <div class="panel-body">
-       <img  class="img-thumbnail" class="img-responsive" src="{{userData.avatar_url}}">
+   <div class="col-lg-8 col-md-4 col-xs-offset-4"> 
+   <div class="panel panel-default" class="col-md-6 col-xs-offset-2"  ng-repeat="user in userData" ng-if="$index % 4 == 0">
+       <div class="panel-heading">
+         <h3 class="panel-title">{{userData.login}}</h3>
+       </div>
+       <div class="panel-body">
+         <img  class="img-thumbnail" ng-click="profile()" class="img-responsive" ng-src="{{userData.avatar_url}}">
+       </div>
      </div>
    </div>
  </div>
-</div>
 
 
 <div class="text-center">

@@ -2,7 +2,11 @@
   margin: 10%;
 }
 
-.thumbnail{
+div.panel-body{
+ text-align: center;
+}
+
+img.thumbnail{
   width: 200px;
 }
 
