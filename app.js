@@ -27,10 +27,9 @@ angular.module('github', [])
   $scope.search = function (){
     
     var vm = this;
-
-   return $http.get("https://api.github.com/users/"+vm.userData.login+'?client_id='+$scope.GITHUB_API_KEY+'&client_secret='+$scope.GITHUB_API_SECRET)
+  $http.get($scope.userData.url)
     .success(function (data) {
-      $scope.data = data;
+      $scope.user = data;
         // $scope.userData.push($scope.username);
          console.log(data);
       });
