@@ -22,9 +22,13 @@ angular.module('github', [])
     } 
   });
 
+
+
   $scope.search = function (){
-    $scope.searchText = { userData: {login: " "}};
-    $http.get("https://api.github.com/users/"+$scope.userData.login+'?client_id='+$scope.GITHUB_API_KEY+'&client_secret='+$scope.GITHUB_API_SECRET)
+    
+    var vm = this;
+
+   return $http.get("https://api.github.com/users/"+vm.userData.login+'?client_id='+$scope.GITHUB_API_KEY+'&client_secret='+$scope.GITHUB_API_SECRET)
     .success(function (data) {
       $scope.data = data;
         // $scope.userData.push($scope.username);
