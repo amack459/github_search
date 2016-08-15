@@ -17,3 +17,12 @@ img.thumbnail{
 .text-center{
   margin:0 auto;
 }
+
+nav.text-center{
+  clear: both;
+}
+
+a, a:hover{
+  text-decoration: none;
+  color: white;
+}

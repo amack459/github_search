@@ -40,12 +40,44 @@
        </div>
      </div>
    </form>
- </div>    
-
+ </div> 
+ <div class="row">
+   <div class="col-md-6 col-sm-offset-3"> 
+ <div class="panel panel-default" class="col-lg-4" ng-if="user">
+     <div class="panel-heading">
+         <h3 class="panel-title">{{userData.name}}</h3>
+     </div>
+     <div class="panel-body" class="col-md-offset-10">
+         <div class="row" >
+             <div class="col-md-6">
+                 <img class="github-avatar img-thumbnail" ng-src="{{userData.avatar_url}}"><br><strong>{{user.name}}
+             </div></strong>
+             <div class="col-md-6">
+                 <div class="stats">
+                     <span class="label label-primary"><a ng-href="{{user.repos_url}}">{{user.public_repos}} Public Repos</a></span>
+                     <span class="label label-success">{{user.public_gists}} Public Gists</span>
+                     <span class="label label-info">{{user.followers}} Followers</span>
+                     <span class="label label-warning">{{user.following}} Following</span>
+                 </div>
+                 <br>
+                 <ul class="list-group">
+                     <li class="list-group-item"><strong>Username: </strong> {{user.login}}</li>
+                     <li class="list-group-item"><strong>Location: </strong> {{user.location}}</li>
+                     <li class="list-group-item"><strong>Email: </strong> {{user.email}}</li>
+                     <li class="list-group-item"><strong>Blog: </strong> {{user.blog}}</li>
+                     <li class="list-group-item"><strong>Member Since: </strong> {{user.created_at}}</li>
+                 </ul>
+             </div>    
+         </div>
+     </div>   
+    </div> 
+  </div> 
+  </div> 
 
  <div class="row">
-   <div class="col-lg-8 col-md-4 col-xs-offset-4"> 
-   <div class="panel panel-default" class="col-md-6 col-xs-offset-2"  ng-repeat="user in userData" ng-if="$index % 4 == 0">
+   <div class="col-md-4 col-md-2 col-xs-offset-5"> 
+  <!--  filter should be added to repeat in order to filter people displayed by searchText, but throws an error bc it's trying to filter an object instead of an array -->
+   <div class="panel panel-default" class="col-md-6 col-xs-offset-2"  ng-repeat="users in userData" ng-if="$index % 5 == 0">
        <div class="panel-heading">
          <h3 class="panel-title">{{userData.login}}</h3>
        </div>
@@ -55,6 +87,7 @@
      </div>
    </div>
  </div>
+
 
 <div class="text-center">
   <nav aria-label="Page navigation">
@@ -77,65 +110,6 @@
     </ul>
   </nav>  
 </div>
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{userData.name}}</h3>
-    </div>
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-md-4">
-                <img class="github-avatar img-thumbnail" ng-src="{{userData.avatar_url}}">
-            </div>
-            <div class="col-md-8">
-                <div class="stats">
-                    <span class="label label-primary">{{user.public_repos}} Public Repos</span>
-                    <span class="label label-success">{{user.public_gists}} Public Gists</span>
-                    <span class="label label-info">{{user.followers}} Followers</span>
-                    <span class="label label-warning">{{user.following}} Following</span>
-                </div>
-                <br>
-                <ul class="list-group">
-                    <li class="list-group-item"><strong>Username: </strong> {{user.login}}</li>
-                    <li class="list-group-item"><strong>Location: </strong> {{user.location}}</li>
-                    <li class="list-group-item"><strong>Email: </strong> {{user.email}}</li>
-                    <li class="list-group-item"><strong>Blog: </strong> {{user.blog}}</li>
-                    <li class="list-group-item"><strong>Member Since: </strong> {{user.created_at}}</li>
-                </ul>
-            </div>    
-        </div>
-    </div>
-
-
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"></h3>
-            <div class="panel-body" class="col-xs-6 col-xs-offset-2">
-            <img  class="thumbnail" src="{{vm.userData.avatar_url}}">
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-<!-- <div class="container">
- <div class="row">
-   <div class="col-md-8 col-md-offset-2">
-      <h1></h1>
-   </div>
- </div>
-</div> -->
-
-<!--   <div>
-    <form name="searchForm">
-       <input type="text" name="userName" ng-model="user.name" />
-     <button class="form" ng-click="getUser()">Search</button>
-   </form> 
- </div> -->
 
 
 
